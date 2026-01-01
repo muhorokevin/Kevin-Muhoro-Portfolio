@@ -32,7 +32,8 @@ import {
   Tent,
   Menu,
   Search,
-  Command
+  Command,
+  Send
 } from 'lucide-react';
 import { cvData } from './data';
 import AIChatAssistant from './components/AIChatAssistant';
@@ -157,13 +158,10 @@ const App: React.FC = () => {
     }
   };
 
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/Kevin_Muhoro_CV.pdf';
-    link.download = 'Kevin_Muhoro_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleRequestResume = () => {
+    const subject = encodeURIComponent("Resume Request - [Strategic Opportunity]");
+    const body = encodeURIComponent(`Hi Kevin,\n\nI visited your portfolio and I am very impressed with your background in Physics, Cybersecurity, and Strategic Leadership.\n\nCould you please send a PDF copy of your resume for review?\n\nBest regards,\n[Your Name/Company]`);
+    window.location.href = `mailto:${cvData.personal.email}?subject=${subject}&body=${body}`;
   };
 
   const handleProjectClick = (project: any) => {
@@ -213,7 +211,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className={`flex justify-between items-center px-6 sm:px-8 py-3 rounded-[1.5rem] sm:rounded-[2rem] transition-all duration-700 ${scrolled ? 'bg-slate-950/80 backdrop-blur-xl border border-white/10 shadow-2xl' : 'bg-transparent border border-transparent'}`}>
             
-            {/* Reverted Logo */}
+            {/* Logo */}
             <button 
               onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 
               className="flex items-center gap-4 group"
@@ -294,7 +292,8 @@ const App: React.FC = () => {
       <section id="about" className="relative min-h-[95vh] flex items-center pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-8 space-y-12 reveal-item" style={{ animationDelay: '0.1s' }}>
+            {/* Text Content - Positioned 2nd on mobile, 1st on desktop */}
+            <div className="lg:col-span-8 space-y-12 reveal-item order-2 lg:order-1" style={{ animationDelay: '0.1s' }}>
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
                 <Zap size={14} /> Systems Orchestrator & Specialist
               </div>
@@ -327,8 +326,8 @@ const App: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap gap-6 no-print">
-                <button onClick={handleDownloadCV} className="group relative flex items-center gap-4 bg-white text-slate-950 px-10 py-5 rounded-2xl hover:scale-105 transition-all font-black text-xs uppercase tracking-widest overflow-hidden shadow-2xl">
-                  <Download size={18} /> Export Profile
+                <button onClick={handleRequestResume} className="group relative flex items-center gap-4 bg-white text-slate-950 px-10 py-5 rounded-2xl hover:scale-105 transition-all font-black text-xs uppercase tracking-widest overflow-hidden shadow-2xl">
+                  <Send size={18} /> Request Full Resume
                 </button>
                 <div className="flex items-center gap-4">
                   <a href={cvData.personal.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-blue-500/50 transition-all text-slate-400 hover:text-white" title="LinkedIn"><Linkedin size={22} /></a>
@@ -338,10 +337,11 @@ const App: React.FC = () => {
               </div>
             </div>
             
-            <div className="lg:col-span-4 hidden lg:block reveal-item" style={{ animationDelay: '0.3s' }}>
-              <div className="relative group p-4">
+            {/* Image Column - Positioned 1st on mobile, 2nd on desktop */}
+            <div className="lg:col-span-4 reveal-item order-1 lg:order-2" style={{ animationDelay: '0.3s' }}>
+              <div className="relative group p-4 max-w-[320px] lg:max-w-none mx-auto lg:mx-0">
                 <div className="absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full group-hover:bg-blue-600/20 transition-all duration-1000" />
-                <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/10 group-hover:border-blue-500/30 transition-all duration-700 bg-slate-900 shadow-2xl scale-95 group-hover:scale-100">
+                <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/10 group-hover:border-blue-500/30 transition-all duration-700 bg-slate-900 shadow-2xl scale-95 lg:scale-100 group-hover:scale-100">
                   <img src={cvData.personal.profileImage} alt="Profile" className="w-full h-full object-cover grayscale brightness-[0.7] group-hover:grayscale-0 group-hover:brightness-90 transition-all duration-1000" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent opacity-60" />
                   <div className="absolute bottom-10 right-10 flex justify-end items-end">

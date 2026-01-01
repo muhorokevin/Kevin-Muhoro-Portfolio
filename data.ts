@@ -11,7 +11,7 @@ export const cvData: CVData = {
     profileImage: "https://i.imgur.com/pADVOmg.jpg",
     bio: "I am a driven and visionary individual with the mind of an entrepreneur. Having just completed my degree in Physics and awaiting graduation, I’m passionate about turning ideas into impactful ventures. I’m actively building a premium mobile car detailing business and exploring opportunities in AI, cybersecurity, and team-building. I bring a unique mix of analytical thinking, creativity, and initiative to everything I do. Faith-centered and purpose-driven, I value excellence, continuous growth, and creating solutions that make a difference.",
     socials: {
-      linkedin: "https://linkedin.com/in/kevin-muhoro",
+      linkedin: "https://www.linkedin.com/in/kevin-muhoro-a794ba28b/",
       website: "https://crossconnectafrica.com"
     }
   },
