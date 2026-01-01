@@ -1,7 +1,7 @@
-
 import { GoogleGenAI } from "@google/genai";
 import { cvData } from "./data";
 
+// Fix: Initialize the Google GenAI SDK with the API key from environment variables using the named parameter.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const SYSTEM_INSTRUCTION = `
@@ -36,6 +36,7 @@ Always aim to turn a casual query into a professional opportunity for the user t
 
 export const getAIResponse = async (message: string) => {
   try {
+    // Fix: Call generateContent directly with the model name and prompt as per updated SDK guidelines.
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: message,
@@ -46,6 +47,7 @@ export const getAIResponse = async (message: string) => {
       },
     });
 
+    // Fix: Use the .text property directly to retrieve the generated content (it is a getter, not a method).
     return response.text || "I'm sorry, I couldn't process that request.";
   } catch (error) {
     console.error("AI Assistant Error:", error);
