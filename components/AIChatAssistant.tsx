@@ -135,7 +135,7 @@ const AIChatAssistant: React.FC = () => {
             </div>
             <p className="mt-4 text-[9px] text-center text-slate-600 font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2">
               <ShieldCheck size={10} className="text-blue-500/50" />
-              Powered by Gemini 3 Flash Alpha
+              Powered by Gemini 3 Pro
             </p>
           </div>
         </>

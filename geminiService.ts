@@ -1,4 +1,3 @@
-
 import { GoogleGenAI } from "@google/genai";
 import { cvData } from "./data";
 
@@ -37,18 +36,18 @@ export const getAIResponse = async (message: string) => {
     // Fix: Create a new GoogleGenAI instance right before making an API call to ensure it always uses the most up-to-date API key.
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
-    // Fix: Call generateContent directly with the model name and prompt as per updated SDK guidelines.
+    // Fix: Removed maxOutputTokens as per guidelines to avoid the risk of truncated or blocked responses during model reasoning.
+    // Using 'gemini-3-pro-preview' for complex analytical and STEM tasks as per guidelines.
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: 'gemini-3-pro-preview',
       contents: message,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.6, // Slightly lower for more factual precision
-        maxOutputTokens: 800,
       },
     });
 
-    // Fix: Use the .text property directly to retrieve the generated content (it is a getter, not a method).
+    // Use the .text property directly to retrieve the generated content.
     return response.text || "I'm sorry, I couldn't process that request.";
   } catch (error) {
     console.error("AI Assistant Error:", error);

@@ -213,26 +213,19 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className={`flex justify-between items-center px-6 sm:px-8 py-3 rounded-[1.5rem] sm:rounded-[2rem] transition-all duration-700 ${scrolled ? 'bg-slate-950/80 backdrop-blur-xl border border-white/10 shadow-2xl' : 'bg-transparent border border-transparent'}`}>
             
-            {/* Logo Integrated into Search Bar */}
-            <div className="flex items-center gap-4">
-              <button 
-                onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 
-                className={`group flex items-center gap-2 px-2 py-2 pr-6 rounded-[1.25rem] transition-all duration-500 border ${scrolled ? 'bg-white/5 border-white/10' : 'bg-white/10 border-white/20'} hover:border-blue-500/50 hover:bg-blue-600/5`}
-              >
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white text-slate-950 rounded-xl flex items-center justify-center text-base sm:text-lg font-black group-hover:rotate-12 transition-transform shadow-lg">KM</div>
-                <div className="flex flex-col text-left">
-                  <div className="flex items-center gap-2">
-                    <Search size={12} className="text-blue-500" />
-                    <span className="font-bold text-[10px] tracking-tight text-white uppercase leading-none">Search Expertise...</span>
-                  </div>
-                  <span className="text-[8px] font-black text-slate-500 tracking-[0.2em] uppercase leading-none mt-1">Command v1.0</span>
-                </div>
-                <div className="ml-4 px-2 py-1 bg-white/5 rounded-md border border-white/10 hidden xl:flex items-center gap-1">
-                   <Command size={10} className="text-slate-500" />
-                   <span className="text-[8px] font-black text-slate-500">K</span>
-                </div>
-              </button>
-            </div>
+            {/* Reverted Logo */}
+            <button 
+              onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 
+              className="flex items-center gap-4 group"
+            >
+              <div className="w-11 h-11 sm:w-12 sm:h-12 bg-white text-slate-950 rounded-xl sm:rounded-2xl flex items-center justify-center text-lg sm:text-xl font-black group-hover:scale-110 group-hover:rotate-6 transition-all shadow-xl shadow-white/5">
+                KM
+              </div>
+              <div className="hidden sm:flex flex-col text-left">
+                <span className="font-black text-white text-sm tracking-tighter leading-none">KEVIN MUHORO</span>
+                <span className="text-[8px] font-black text-blue-500 tracking-[0.2em] uppercase mt-1">Systems Executive</span>
+              </div>
+            </button>
 
             {/* Desktop Links */}
             <div className="hidden lg:flex items-center gap-10">
