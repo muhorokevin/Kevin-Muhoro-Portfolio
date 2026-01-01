@@ -30,7 +30,9 @@ import {
   Flame,
   LifeBuoy,
   Tent,
-  Menu
+  Menu,
+  Search,
+  Command
 } from 'lucide-react';
 import { cvData } from './data';
 import AIChatAssistant from './components/AIChatAssistant';
@@ -209,16 +211,28 @@ const App: React.FC = () => {
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-[100] transition-all duration-700 no-print ${scrolled ? 'py-3 translate-y-0' : 'py-6'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className={`flex justify-between items-center px-6 sm:px-8 py-3 rounded-[1rem] sm:rounded-[1.25rem] transition-all duration-700 ${scrolled ? 'bg-slate-950/80 backdrop-blur-xl border border-white/10 shadow-2xl' : 'bg-transparent border border-transparent'}`}>
+          <div className={`flex justify-between items-center px-6 sm:px-8 py-3 rounded-[1.5rem] sm:rounded-[2rem] transition-all duration-700 ${scrolled ? 'bg-slate-950/80 backdrop-blur-xl border border-white/10 shadow-2xl' : 'bg-transparent border border-transparent'}`}>
             
-            {/* Logo */}
-            <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="flex items-center gap-3 group">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 bg-white text-slate-950 rounded-lg flex items-center justify-center text-base sm:text-lg font-black group-hover:rotate-12 transition-transform">KM</div>
-              <div className="flex flex-col text-left">
-                <span className="font-bold text-[10px] sm:text-xs tracking-tight text-white uppercase leading-none mb-1">M U H O R O</span>
-                <span className="text-[8px] sm:text-[9px] font-black text-blue-500 tracking-[0.2em] uppercase leading-none">Command Center</span>
-              </div>
-            </button>
+            {/* Logo Integrated into Search Bar */}
+            <div className="flex items-center gap-4">
+              <button 
+                onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 
+                className={`group flex items-center gap-2 px-2 py-2 pr-6 rounded-[1.25rem] transition-all duration-500 border ${scrolled ? 'bg-white/5 border-white/10' : 'bg-white/10 border-white/20'} hover:border-blue-500/50 hover:bg-blue-600/5`}
+              >
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white text-slate-950 rounded-xl flex items-center justify-center text-base sm:text-lg font-black group-hover:rotate-12 transition-transform shadow-lg">KM</div>
+                <div className="flex flex-col text-left">
+                  <div className="flex items-center gap-2">
+                    <Search size={12} className="text-blue-500" />
+                    <span className="font-bold text-[10px] tracking-tight text-white uppercase leading-none">Search Expertise...</span>
+                  </div>
+                  <span className="text-[8px] font-black text-slate-500 tracking-[0.2em] uppercase leading-none mt-1">Command v1.0</span>
+                </div>
+                <div className="ml-4 px-2 py-1 bg-white/5 rounded-md border border-white/10 hidden xl:flex items-center gap-1">
+                   <Command size={10} className="text-slate-500" />
+                   <span className="text-[8px] font-black text-slate-500">K</span>
+                </div>
+              </button>
+            </div>
 
             {/* Desktop Links */}
             <div className="hidden lg:flex items-center gap-10">
@@ -238,7 +252,7 @@ const App: React.FC = () => {
             <div className="flex items-center gap-4">
               <button 
                 onClick={() => scrollToSection('contact')} 
-                className="hidden sm:block px-6 py-2 rounded-lg bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest hover:bg-blue-500 hover:-translate-y-1 transition-all shadow-xl shadow-blue-600/20"
+                className="hidden sm:block px-6 py-2.5 rounded-xl bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest hover:bg-blue-500 hover:-translate-y-1 transition-all shadow-xl shadow-blue-600/20"
               >
                 Inquire
               </button>
@@ -255,7 +269,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 top-[72px] bg-slate-950/95 backdrop-blur-2xl lg:hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <div className={`fixed inset-0 top-[88px] bg-slate-950/95 backdrop-blur-2xl lg:hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
           <div className="p-8 flex flex-col gap-6">
             {navLinks.map((link) => (
               <button 

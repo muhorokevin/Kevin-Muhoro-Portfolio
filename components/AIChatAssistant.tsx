@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, Send, X, Minus, Bot, Sparkles } from 'lucide-react';
+import { MessageCircle, Send, X, Minus, Bot, Sparkles, ShieldCheck } from 'lucide-react';
 import { getAIResponse } from '../geminiService';
 import { cvData } from '../data';
 
@@ -109,26 +109,32 @@ const AIChatAssistant: React.FC = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
+          {/* Input with KM branding */}
           <div className="p-6 border-t border-white/5 bg-slate-900">
-            <div className="relative flex items-center gap-3">
-              <input 
-                type="text" 
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Secure prompt entry..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 outline-none transition-all"
-              />
+            <div className="relative flex items-center gap-3 group">
+              <div className="relative flex-1">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-2 pointer-events-none border-r border-white/10 pr-3 mr-3">
+                   <div className="w-6 h-6 bg-white text-slate-950 rounded flex items-center justify-center text-[10px] font-black">KM</div>
+                </div>
+                <input 
+                  type="text" 
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                  placeholder="Secure prompt entry..."
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-16 pr-6 py-4 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 outline-none transition-all"
+                />
+              </div>
               <button 
                 onClick={handleSend}
                 disabled={isLoading || !input.trim()}
-                className="bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-500 disabled:opacity-50 transition-all shadow-lg shadow-blue-600/20 active:scale-95"
+                className="bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-500 disabled:opacity-50 transition-all shadow-lg shadow-blue-600/20 active:scale-95 flex-shrink-0"
               >
                 <Send size={20} />
               </button>
             </div>
-            <p className="mt-4 text-[9px] text-center text-slate-600 font-bold uppercase tracking-[0.2em]">
+            <p className="mt-4 text-[9px] text-center text-slate-600 font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+              <ShieldCheck size={10} className="text-blue-500/50" />
               Powered by Gemini 3 Flash Alpha
             </p>
           </div>

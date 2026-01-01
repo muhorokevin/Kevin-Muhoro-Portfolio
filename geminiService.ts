@@ -1,8 +1,6 @@
+
 import { GoogleGenAI } from "@google/genai";
 import { cvData } from "./data";
-
-// Fix: Initialize the Google GenAI SDK with the API key from environment variables using the named parameter.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const SYSTEM_INSTRUCTION = `
 You are the high-level Virtual Interface and Strategic Assistant for ${cvData.personal.name}. 
@@ -36,6 +34,9 @@ Always aim to turn a casual query into a professional opportunity for the user t
 
 export const getAIResponse = async (message: string) => {
   try {
+    // Fix: Create a new GoogleGenAI instance right before making an API call to ensure it always uses the most up-to-date API key.
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+
     // Fix: Call generateContent directly with the model name and prompt as per updated SDK guidelines.
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
