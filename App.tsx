@@ -314,7 +314,7 @@ const App: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-medium">
-                  {cvData.personal.bio.substring(0, 140)}...
+                  {cvData.personal.bio}
                 </p>
                 <div className="flex flex-col gap-4 p-7 premium-glass rounded-[2rem] glow-hover transition-all">
                   <div className="flex items-center gap-3">

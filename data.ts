@@ -9,7 +9,7 @@ export const cvData: CVData = {
     phone: "+254728999073",
     location: "Nairobi, Kenya",
     profileImage: "https://i.imgur.com/pADVOmg.jpg",
-    bio: "I am a driven and visionary individual with the mind of an entrepreneur. Having just completed my degree in Physics and awaiting graduation, I’m passionate about turning ideas into impactful ventures. I’m actively building a premium mobile car detailing business and exploring opportunities in AI, cybersecurity, and team-building. I bring a unique mix of analytical thinking, creativity, and initiative to everything I do. Faith-centered and purpose-driven, I value excellence, continuous growth, and creating solutions that make a difference.",
+    bio: "Driven and visionary graduate with an entrepreneurial mindset and a recently completed degree in Physics. Passionate about transforming ideas into impactful ventures, with hands-on experience building a premium team-building and experiential learning platform. Actively exploring opportunities in AI, cybersecurity, and innovative team-based solutions. Combines strong analytical thinking with creativity, initiative, and a results-oriented approach. Faith-centered and purpose-driven, with a commitment to excellence, continuous growth, and creating meaningful, real-world impact.",
     socials: {
       linkedin: "https://www.linkedin.com/in/kevin-muhoro-a794ba28b/",
       website: "https://crossconnectafrica.com"
