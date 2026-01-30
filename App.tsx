@@ -33,7 +33,8 @@ import {
   Menu,
   Search,
   Command,
-  Send
+  Send,
+  Github
 } from 'lucide-react';
 import { cvData } from './data';
 import AIChatAssistant from './components/AIChatAssistant';
@@ -304,7 +305,7 @@ const App: React.FC = () => {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-slate-200">MUHORO</span>
                 </h1>
                 <div className="flex flex-wrap gap-5 items-center pt-2">
-                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest border-b border-blue-500/30 pb-1">Founder: Cross Connect Africa</span>
+                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest border-b border-blue-500/30 pb-1">Founder: CrossConnect Africa</span>
                   <span className="text-slate-600 text-xl font-thin">/</span>
                   <span className="text-slate-300 text-xs font-bold uppercase tracking-widest border-b border-white/10 pb-1">Physicist</span>
                   <span className="text-slate-600 text-xl font-thin">/</span>
@@ -331,6 +332,7 @@ const App: React.FC = () => {
                 </button>
                 <div className="flex items-center gap-4">
                   <a href={cvData.personal.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-blue-500/50 transition-all text-slate-400 hover:text-white" title="LinkedIn"><Linkedin size={22} /></a>
+                  <a href={cvData.personal.socials.github} target="_blank" rel="noopener noreferrer" className="p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-blue-500/50 transition-all text-slate-400 hover:text-white" title="GitHub"><Github size={22} /></a>
                   <a href={`mailto:${cvData.personal.email}`} className="p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-blue-500/50 transition-all text-slate-400 hover:text-white" title="Email"><Mail size={22} /></a>
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-blue-500/50 transition-all text-slate-400 hover:text-white" title="WhatsApp"><MessageCircle size={22} /></a>
                 </div>
@@ -416,16 +418,16 @@ const App: React.FC = () => {
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cvData.skills.map((skillGroup, idx) => (
-              <div key={idx} className={`group p-10 rounded-[2.5rem] border transition-all duration-500 relative overflow-hidden ${skillGroup.category === 'Tactical & Safety' ? 'bg-blue-600/5 border-blue-500/20' : 'bg-[#0a0f1e] border-white/5 hover:border-blue-500/30'}`}>
+              <div key={idx} className={`group p-10 rounded-[2.5rem] border transition-all duration-500 relative overflow-hidden ${skillGroup.category === 'Tactical & Safety' || skillGroup.category === 'Leadership & Strategy' ? 'bg-blue-600/5 border-blue-500/20' : 'bg-[#0a0f1e] border-white/5 hover:border-blue-500/30'}`}>
                 <div className="absolute top-0 right-0 p-8 text-white/5 group-hover:text-blue-500/10 transition-colors">
-                  {skillGroup.category === 'Tactical & Safety' ? <Flame size={100} strokeWidth={1} /> : <BrainCircuit size={100} strokeWidth={1} />}
+                  {skillGroup.category.includes('Leadership') ? <Trophy size={100} strokeWidth={1} /> : <BrainCircuit size={100} strokeWidth={1} />}
                 </div>
                 <div className="relative z-10">
                   <h4 className="font-black text-blue-500 text-[10px] uppercase tracking-[0.3em] mb-12 border-b border-white/5 pb-4">{skillGroup.category}</h4>
                   <div className="space-y-4">
                     {skillGroup.items.map((skill, i) => (
                       <div key={i} className="flex items-center gap-3.5 group/item">
-                        <div className={`w-2 h-2 rounded-full transition-colors ${skillGroup.category === 'Tactical & Safety' ? 'bg-blue-500' : 'bg-slate-800 group-hover/item:bg-blue-500'}`} />
+                        <div className={`w-2 h-2 rounded-full transition-colors ${skillGroup.category.includes('Leadership') ? 'bg-blue-500' : 'bg-slate-800 group-hover/item:bg-blue-500'}`} />
                         <span className="text-slate-400 font-semibold text-sm tracking-tight group-hover/item:text-white transition-colors">{skill}</span>
                       </div>
                     ))}
@@ -497,7 +499,7 @@ const App: React.FC = () => {
                 </div>
                 <div className="text-center md:text-right">
                    <p className="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">{edu.period}</p>
-                   {edu.details && <p className="text-slate-400 text-xs font-medium tracking-tight uppercase">{edu.details.join(' • ')}</p>}
+                   {edu.details && <p className="text-slate-400 text-xs font-medium tracking-tight uppercase max-w-xs">{edu.details.join(' • ')}</p>}
                 </div>
               </div>
             ))}

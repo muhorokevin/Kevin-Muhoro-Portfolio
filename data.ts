@@ -6,71 +6,63 @@ export const cvData: CVData = {
     name: "Kevin Muhoro",
     title: "Founder & Strategic Analyst | Physics Graduate | Cybersecurity Specialist",
     email: "kevinmuhoro@proton.me",
-    phone: "+254728999073",
+    phone: "+254 728 999 073",
     location: "Nairobi, Kenya",
     profileImage: "https://i.imgur.com/pADVOmg.jpg",
     bio: "Driven and visionary graduate with an entrepreneurial mindset and a recently completed degree in Physics. Passionate about transforming ideas into impactful ventures, with hands-on experience building a premium team-building and experiential learning platform. Actively exploring opportunities in AI, cybersecurity, and innovative team-based solutions. Combines strong analytical thinking with creativity, initiative, and a results-oriented approach. Faith-centered and purpose-driven, with a commitment to excellence, continuous growth, and creating meaningful, real-world impact.",
     socials: {
       linkedin: "https://www.linkedin.com/in/kevin-muhoro-a794ba28b/",
-      website: "https://crossconnectafrica.com"
+      github: "https://github.com/muhorokevin",
+      website: "https://cross-connect-africa.vercel.app"
     }
   },
   experiences: [
     {
-      company: "Cross Connect Africa",
-      role: "Founder & Lead Facilitator",
-      period: "01/2024 – Present",
-      location: "Nairobi, Kenya",
-      description: [
-        "Architected and launched a premium team-building and experiential learning platform.",
-        "Facilitated high-impact leadership workshops, driving significant improvements in collaboration for 500+ professionals.",
-        "Integrating tactical survival principles and safety protocols into outdoor corporate training programs."
-      ],
-      skills: ["Entrepreneurship", "Strategic Leadership", "Venture Scaling", "Outdoor Education"]
-    },
-    {
-      company: "CITAM Parklands",
-      role: "Head of Missions",
-      period: "2022 – 2023",
-      location: "Nairobi, Kenya",
-      description: [
-        "Orchestrated large-scale community impact projects and cross-functional outreach strategies.",
-        "Refined professional resilience by managing complex logistics and multi-disciplinary teams in high-pressure environments.",
-        "Developed a 'mission-first' professional mindset, prioritizing objective achievement and stakeholder alignment."
-      ],
-      skills: ["Logistics Strategy", "Stakeholder Management", "Crisis Resolution", "Team Orchestration"]
-    },
-    {
-      company: "CITAM Parklands",
-      role: "Head of Department - Youth Ministry",
-      period: "2020 – 2022",
-      location: "Nairobi, Kenya",
-      description: [
-        "Spearheaded strategic development for youth engagement, managing engagement for 500+ active members.",
-        "Built the core of my professional discipline and emotional intelligence through intensive mentoring and organizational strategy.",
-        "Mastered the art of conflict resolution and leadership transition planning, essential for any corporate ecosystem."
-      ],
-      skills: ["Organizational Strategy", "Emotional Intelligence", "Conflict Resolution", "Public Speaking"]
-    },
-    {
-      company: "Independent Consultant",
-      role: "Web Development & Penetration Testing",
+      company: "Otheniel Enterprises Limited",
+      role: "Customer Relations & Web Systems Officer",
       period: "2023 – Present",
-      location: "Nairobi / Remote",
+      location: "Nairobi, Kenya",
       description: [
-        "Executing regular web development projects for diverse clients, focusing on clean code and performance.",
-        "Performing rigorous penetration tests and vulnerability assessments to secure digital assets and prevent data breaches."
+        "Managed customer and client care, serving as the primary point of contact for inquiries and service updates.",
+        "Designed, developed, and continue to maintain the company website to improve service visibility and accessibility.",
+        "Liaised directly with clients to keep them informed on application progress and immigration processes.",
+        "Coordinated internal and client communication to ensure smooth, transparent, and timely service delivery."
       ],
-      skills: ["Front End Coding", "Penetration Testing", "Security Auditing", "Problem-Solving"]
+      skills: ["Customer Care", "Web Development", "Stakeholder Communication", "System Maintenance"]
     },
     {
-      company: "Specialized Power System Limited",
-      role: "Engineering Consultant (Technical Attachment)",
-      period: "2024",
-      location: "Nairobi",
+      company: "CrossConnect Africa",
+      role: "Founder & Technical Lead (Part-Time Business)",
+      period: "2023 – Present",
+      location: "Nairobi, Kenya",
       description: [
-        "Applied electromagnetic logic to optimize industrial distribution board configurations.",
-        "Conducted technical analysis on power control systems, bridging the gap between theoretical physics and industrial application."
+        "Founded and operate a part-time business focused on team building, experiential learning, and technology-driven collaboration.",
+        "Mission: To build strong, value-driven teams by combining technology, experiential learning, and purpose-centered leadership.",
+        "Designed and developed the organization's digital platform and online presence."
+      ],
+      skills: ["Entrepreneurship", "Strategic Leadership", "Team Building", "Digital Presence"]
+    },
+    {
+      company: "Independent Freelance",
+      role: "Web Developer & Penetration Tester",
+      period: "Aug 2023 – Nov 2025",
+      location: "Remote",
+      description: [
+        "Delivered web development and penetration testing services to global clients.",
+        "Conducted vulnerability assessments and basic security audits.",
+        "Built responsive front-end interfaces and secure web applications."
+      ],
+      skills: ["Front End Coding", "Penetration Testing", "Security Audits", "Responsive Design"]
+    },
+    {
+      company: "Specialized Power Systems Ltd",
+      role: "Industrial Attachment",
+      period: "May 2024 – Jul 2024",
+      location: "Nairobi, Kenya",
+      description: [
+        "Applied principles of Electricity and Magnetism in industrial environments.",
+        "Assisted in the assembly of power control boxes and electrical distribution boards.",
+        "Supported testing and inspection of electrical systems."
       ],
       skills: ["Industrial Engineering", "Analytical Logic", "Power Systems Design"]
     }
@@ -78,32 +70,32 @@ export const cvData: CVData = {
   skills: [
     {
       category: "Digital Engineering",
-      items: ["Front End Coding", "Web Design", "UI/UX Design", "C++", "Java"]
+      items: ["Web Development (Front-End & Basic Full-Stack)", "UI/UX Design", "Responsive Web Design"]
     },
     {
       category: "Security & Logic",
-      items: ["Penetration Testing", "Cyber Security", "Vulnerability Assessment", "Analytical Research"]
+      items: ["Penetration Testing", "Vulnerability Assessment", "Cyber Security Fundamentals", "Analytical Thinking"]
     },
     {
-      category: "Tactical & Safety",
-      items: ["Fire Marshal Training", "Emergency Response", "First Aid Training", "Outdoor Survival"]
+      category: "Programming & Tools",
+      items: ["C++", "Java", "Python", "DFT (SIESTA Framework)"]
     },
     {
-      category: "Executive Leadership",
-      items: ["Team Building", "Strategic Management", "Mission-Driven Leadership", "Organizational Strategy"]
+      category: "Leadership & Strategy",
+      items: ["Team Building & Leadership", "Strong Communication Skills", "Customer Care", "Problem Solving"]
     }
   ],
   projects: [
     {
       title: "Cross Connect Africa Digital Ecosystem",
-      description: "A centralized platform for experiential learning management. It streamlines participant portals, automated scheduling, and program scaling for high-impact leadership training. Built to facilitate growth for 500+ participants simultaneously.",
+      description: "A centralized platform for experiential learning management. It streamlines participant portals, automated scheduling, and program scaling for high-impact leadership training.",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
       link: "https://cross-connect-africa.vercel.app/",
       tags: ["Business Systems", "EdTech", "Venture Strategy"]
     },
     {
       title: "Material Science Research: TiNiSn",
-      description: "A First-Principles Investigation into the optical properties of Half-Heusler semiconductors using Density Functional Theory (DFT) and the SIESTA framework. Focused on dielectric function analysis and band gap mapping for solar applications.",
+      description: "A First-Principles Investigation into the optical properties of Half-Heusler semiconductors using Density Functional Theory (DFT) and the SIESTA framework.",
       image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800",
       link: "#",
       tags: ["Computational Physics", "DFT", "SIESTA Framework"],
@@ -127,45 +119,45 @@ export const cvData: CVData = {
   education: [
     {
       institution: "The Catholic University of Eastern Africa",
-      degree: "Bachelors of Science in PHYSICS",
+      degree: "Bachelor of Science in Physics",
       period: "2021 – 2025",
       location: "Nairobi, Kenya"
     },
     {
       institution: "Excel Global College",
-      degree: "Full Stack Development & Cyber Security",
+      degree: "Cyber Security & Software Development",
       period: "2022 – 2023",
       location: "Nairobi, Kenya",
-      details: ["HTML, CSS, JavaScript", "Java, C++", "Cyber Security"]
+      details: ["Full Stack Development (HTML, CSS, JavaScript)", "Programming Languages: Java, C++", "Cyber Security Fundamentals"]
     },
     {
       institution: "Sunshine Secondary School",
-      degree: "Kenya Certificate of Secondary Education",
+      degree: "Kenya Certificate of Secondary Education (KCSE)",
       period: "2014 – 2017",
       location: "Nairobi, Kenya"
     },
     {
       institution: "Riverbank Academy",
-      degree: "Kenya Certificate of Primary Education",
+      degree: "Kenya Certificate of Primary Education (KCPE)",
       period: "2007 – 2013",
       location: "Nairobi, Kenya"
     }
   ],
   awards: [
     {
-      title: "HoD Youth Ministry",
+      title: "HoD, Youth Ministry",
       organization: "CITAM Parklands",
-      description: "Leading and directing youth engagement and spiritual development initiatives."
+      description: "Directing youth engagement and spiritual development initiatives."
     },
     {
-      title: "First Runners Up",
-      organization: "Ruck Events",
-      description: "Recognized for excellence in the competitive walking race."
+      title: "First Runners-Up",
+      organization: "Ruck Walking Race Event",
+      description: "Recognized for high endurance and excellence in competitive athletic events."
     },
     {
-      title: "Density Functional Theory Research",
-      organization: "CUEA Physics Department",
-      description: "Academic recognition for research depth in semiconductor properties."
+      title: "Academic Focus: Density Functional Theory",
+      organization: "Physics Department",
+      description: "Specialized focus on First-Principles Investigation of TiNiSn properties."
     }
   ]
 };
